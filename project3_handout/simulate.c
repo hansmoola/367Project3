@@ -23,14 +23,14 @@ char *regname[15] = {"%rax","%rcx","%rdx","%rbx","%rsp","%rbp",
 void
 execute(int PC) {
    int done = 0;
-   char byte; 
+   char byte;
    char opcode ;
 
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
       switch (opcode) {
-	 case 0: printf("Halting at instruction 0x%x\n",PC); 
+	 case 0: printf("Halting at instruction 0x%x\n",PC);
 		done = 1; break;  //halt
 	 case 1: PC++; break;   // nop
 	 case 2: PC = RRmov(PC);
@@ -53,7 +53,7 @@ execute(int PC) {
 		  break;
 	 case 11: PC = Pop(PC);
 		  break;
-         case 12: PC = printall(PC);
+    case 12: PC = printall(PC);
 		   break;
 	 case 13: PC = printreg(PC);
 		  break;
@@ -66,7 +66,7 @@ execute(int PC) {
 }
 
 
-int 
+int
 printreg(int PC) {
    return PC+1;
 }
@@ -79,7 +79,7 @@ printall (int PC) {
 int
 printmem(int PC) {
    return PC + 1;
-} 
+}
 
 int
 IRmov(int PC) {
@@ -131,8 +131,3 @@ int
 OPx(int PC) {
    return PC+1;
 }
-
-
-
-
-
