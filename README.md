@@ -10,9 +10,9 @@ for that instruction. After execution (which may modify the PC), you execute the
 PC, … Start by understanding what the below program should do if simulated.
 
 0x0
-30 F6 57 04 00 00 00 00 00 00
-D0 6F
-E0 EF 68 00 00 00 00 00 00 00
+30 F6 57 04 00 00 00 00 00 00  #irmovq $0x40, %rbp
+D0 6F                          #printreg %rsi
+E0 EF 68 00 00 00 00 00 00 00  #printmem 0x86()
 40 6E 70 00 00 00 00 00 00 00
 E0 EF 70 00 00 00 00 00 00 00
 50 0E 68 00 00 00 00 00 00 00
